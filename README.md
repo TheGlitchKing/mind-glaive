@@ -1,13 +1,14 @@
-# Context Preservation System (CPS)
+# mind-glaive
 
 **Eliminate context rot in Claude Code with intelligent memory, auto-learning hooks, and specialized subagents.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status: In Development](https://img.shields.io/badge/Status-In%20Development-orange.svg)]()
+[![Status: Production Ready](https://img.shields.io/badge/Status-Production%20Ready-green.svg)]()
+[![GitHub: TheGlitchKing/mind-glaive](https://img.shields.io/badge/GitHub-TheGlitchKing%2Fmind--glaive-blue)](https://github.com/TheGlitchKing/mind-glaive)
 
 ## Overview
 
-The Context Preservation System (CPS) is a comprehensive Claude Code plugin that solves the context rot problem through an intelligent, multi-layered architecture that:
+**mind-glaive** is a production-ready Claude Code plugin that solves the context rot problem through an intelligent, multi-layered architecture that:
 
 - **Captures** knowledge automatically via hooks
 - **Distills** it efficiently using local LLM summaries
@@ -74,14 +75,14 @@ Context rot occurs when:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/context-preservation-system.git
-cd context-preservation-system
+git clone https://github.com/TheGlitchKing/mind-glaive.git
+cd mind-glaive
 
 # Install globally (all your projects)
-./install.sh --scope user
+./install.sh --scope user --template full-stack
 
 # Or install for current project only
-./install.sh --scope project --template full-stack
+./install.sh --scope project --template minimal
 
 # Verify installation
 claude # Start Claude Code
@@ -90,21 +91,22 @@ claude # Start Claude Code
 
 ## Installation Methods
 
-### Method 1: Direct Install (Current)
+### Method 1: Direct Install (Recommended)
 ```bash
-git clone https://github.com/yourusername/context-preservation-system.git
-cd context-preservation-system
-./install.sh --scope user
+git clone https://github.com/TheGlitchKing/mind-glaive.git
+cd mind-glaive
+./install.sh --scope user --template full-stack
 ```
 
 ### Method 2: One-Liner
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/context-preservation-system/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/TheGlitchKing/mind-glaive/main/install.sh | bash
 ```
 
-### Method 3: Plugin Manager (Future)
+### Method 3: Plugin Manager (Coming Soon)
+Once mind-glaive is registered in the Claude Code marketplace:
 ```bash
-claude plugin install context-preservation-system
+/plugin install mind-glaive
 ```
 
 ## Project Templates

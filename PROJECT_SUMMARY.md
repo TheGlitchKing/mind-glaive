@@ -1,14 +1,14 @@
-# Context Preservation System - Project Summary
+# mind-glaive - Project Summary
 
 **Status**: ✅ Complete - v1.0.0 Ready for Production
-**Duration**: 8 weeks of planning + implementation
+**Repository**: https://github.com/TheGlitchKing/mind-glaive
 **Lines of Code**: 8,000+ across code, docs, and tests
 
 ---
 
 ## 🎯 Project Goal
 
-Build a production-ready Claude Code plugin that **eliminates context rot** through intelligent memory management, auto-learning hooks, and specialized subagents.
+Build a production-ready Claude Code plugin named **mind-glaive** that **eliminates context rot** through intelligent memory management, auto-learning hooks, and specialized subagents.
 
 **Problem Solved**:
 - No more repeating explanations across sessions
@@ -361,7 +361,7 @@ See DEVELOPMENT.md for:
 
 ## 🎉 Conclusion
 
-The Context Preservation System is a complete, production-ready plugin that solves the context rot problem in Claude Code. All 8 layers are implemented, tested, documented, and ready for use.
+**mind-glaive** is a complete, production-ready plugin that solves the context rot problem in Claude Code. All 8 layers are implemented, tested, documented, and ready for use.
 
 **Key Achievement**: Created a system that automatically learns and improves from developer interactions, making Claude Code smarter with every session.
 
@@ -374,4 +374,4 @@ The Context Preservation System is a complete, production-ready plugin that solv
 **Created**: January 2026
 **Status**: Complete and Production Ready
 **License**: MIT
-**Website**: https://github.com/yourusername/context-preservation-system
+**Repository**: https://github.com/TheGlitchKing/mind-glaive

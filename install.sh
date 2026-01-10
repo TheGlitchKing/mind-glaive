@@ -1,5 +1,5 @@
 #!/bin/bash
-# Context Preservation System Installer
+# mind-glaive Plugin Installer
 #
 # Usage:
 #   ./install.sh --scope user --template full-stack
@@ -27,7 +27,7 @@ while [[ $# -gt 0 ]]; do
         --template) TEMPLATE="$2"; shift 2 ;;
         --help)
             cat << 'HELP'
-Context Preservation System Installer
+mind-glaive Installer
 
 Usage: ./install.sh [OPTIONS]
 
@@ -73,8 +73,8 @@ if [ ! -d "$TEMPLATE_PATH" ]; then
     exit 1
 fi
 
-echo -e "${BLUE}Context Preservation System Installer${NC}"
-echo "========================================"
+echo -e "${BLUE}mind-glaive Plugin Installer${NC}"
+echo "=============================="
 echo ""
 echo -e "${GREEN}Installation Details:${NC}"
 echo "  Scope: $SCOPE ($INSTALL_DIR)"

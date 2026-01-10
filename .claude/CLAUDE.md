@@ -1,8 +1,8 @@
-# Context Preservation System - Project Instructions
+# mind-glaive - Project Instructions
 
 **Project**: Claude Code Plugin to Eliminate Context Rot
-**Status**: Planning & Documentation Complete → Ready for Implementation
-**Phase**: Week 1 (Foundation - Memory Hierarchy)
+**Status**: Complete & Production Ready - v1.0.0
+**Repository**: https://github.com/TheGlitchKing/mind-glaive
 
 ---
 

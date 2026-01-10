@@ -1,13 +1,13 @@
 {
-  "name": "Context Preservation System",
+  "name": "mind-glaive",
   "version": "1.0.0",
   "description": "Eliminate context rot through intelligent memory management, auto-learning hooks, and specialized subagents",
-  "author": "Development Team",
+  "author": "TheGlitchKing",
   "license": "MIT",
-  "homepage": "https://github.com/yourusername/context-preservation-system",
+  "homepage": "https://github.com/TheGlitchKing/mind-glaive",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/context-preservation-system.git"
+    "url": "https://github.com/TheGlitchKing/mind-glaive.git"
   },
   "keywords": [
     "context",

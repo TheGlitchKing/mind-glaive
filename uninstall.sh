@@ -1,7 +1,7 @@
 #!/bin/bash
-# Context Preservation System Uninstaller
+# mind-glaive Plugin Uninstaller
 #
-# Cleanly removes CPS without deleting user data
+# Cleanly removes mind-glaive without deleting user data
 
 set -e
 
@@ -11,7 +11,7 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 
-echo -e "${BLUE}Context Preservation System Uninstaller${NC}"
+echo -e "${BLUE}mind-glaive Plugin Uninstaller${NC}"
 echo "========================================"
 echo ""
 
