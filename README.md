@@ -96,7 +96,13 @@ claude # Start Claude Code
 Within a Claude Code session, add the mind-glaive marketplace:
 
 ```
-/plugin add-marketplace https://github.com/TheGlitchKing/mind-glaive.git
+/plugin marketplace add TheGlitchKing/mind-glaive
+```
+
+Or using the shorthand:
+
+```
+/plugin market add TheGlitchKing/mind-glaive
 ```
 
 Then install the plugin:
