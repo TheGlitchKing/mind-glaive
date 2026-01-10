@@ -73,12 +73,21 @@ Context rot occurs when:
 
 ## Quick Start
 
-### Via Claude Code Marketplace (Easiest)
+### Via Claude Code Marketplace (Easiest - Recommended!)
 
+**For each collaborator (once):**
 ```
-/plugin marketplace add TheGlitchKing/mind-glaive
-/plugin install mind-glaive
-/welcome
+/plugin install TheGlitchKing/mind-glaive
+```
+
+**For each project (once):**
+```
+/mind-glaive/setup
+```
+
+That's it! 🎉 Hooks are now active. Run:
+```
+/context/status
 ```
 
 ### Or Direct Install
