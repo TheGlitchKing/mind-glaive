@@ -15,9 +15,5 @@
     "hooks",
     "subagents",
     "knowledge-base"
-  ],
-  "hooks": "hooks/default-hooks.json",
-  "commands": "commands",
-  "agents": "agents",
-  "skills": "skills"
+  ]
 }
