@@ -73,6 +73,16 @@ Context rot occurs when:
 
 ## Quick Start
 
+### Via Claude Code Marketplace (Easiest)
+
+```
+/plugin marketplace add TheGlitchKing/mind-glaive
+/plugin install mind-glaive
+/welcome
+```
+
+### Or Direct Install
+
 ```bash
 # Clone the repository
 git clone https://github.com/TheGlitchKing/mind-glaive.git
@@ -86,7 +96,7 @@ cd mind-glaive
 
 # Verify installation
 claude # Start Claude Code
-/context/status
+/welcome
 ```
 
 ## Installation Methods
@@ -111,7 +121,13 @@ Then install the plugin:
 /plugin install mind-glaive
 ```
 
-Verify installation:
+Verify installation - you should see a welcome message or run:
+
+```
+/welcome
+```
+
+This shows the installation success message and quick start guide. Then check context health:
 
 ```
 /context/status
