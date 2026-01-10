@@ -274,28 +274,139 @@
 ## Future Roadmap
 
 ### v1.1 (March 2026)
-**Focus**: Usability & monitoring
+**Focus**: Cross-project intelligence with semantic vector search
 
-- [ ] Web dashboard for knowledge base
-  - [ ] Visual context health
-  - [ ] Session timeline
-  - [ ] Pattern trends
-  - [ ] Decision history graph
-- [ ] Improved pattern recognition
-  - [ ] ML-based similarity detection
-  - [ ] Cross-file pattern tracking
-- [ ] Team features
-  - [ ] Shared knowledge sync
-  - [ ] Team metrics dashboard
+**Impact**: ~70% context rot improvement (8% waste vs 20% in v1.0)
+
+#### Infrastructure
+- [ ] Qdrant Docker Integration
+  - [ ] Docker Compose setup (lightweight, local)
+  - [ ] Vector database initialization
+  - [ ] Automatic container lifecycle management
+  - [ ] Graceful fallback if Qdrant unavailable
+  - [ ] Schema design for pattern storage with metadata
+- [ ] Enhanced MCP Server for Intelligent Retrieval
+  - [ ] Semantic search with embeddings
+  - [ ] Metadata-rich filtering (success_rate, recency_score, team_approved)
+  - [ ] Related patterns and anti-patterns linking
+  - [ ] Confidence scoring on retrieved rules
+
+#### Cross-Project Pattern Intelligence
+- [ ] Pattern Inheritance Across Projects
+  - [ ] Global pattern registry (via Qdrant)
+  - [ ] Automatic pattern discovery from similar codebases
+  - [ ] Context-aware rule suggestions
+  - [ ] Pattern versioning and deprecation tracking
+- [ ] Decision Impact Network
+  - [ ] Decision relationship mapping (blocks/enables/requires)
+  - [ ] Impact propagation analysis
+  - [ ] Dependency visualization
+  - [ ] Breaking change detection when decisions shift
+- [ ] Anti-Pattern Detection
+  - [ ] Learn from failures (not just successes)
+  - [ ] Track decisions that led to rework
+  - [ ] Auto-flag similar patterns before they cause problems
+  - [ ] Historical anti-pattern database
+- [ ] Metadata Enrichment
+  - [ ] `success_rate`: How often this pattern solved similar problems
+  - [ ] `last_used`: Recent pattern applicability
+  - [ ] `team_approved`: Pattern validated by multiple team members
+  - [ ] `recency_score`: Favor patterns used in recent sessions
+  - [ ] `related_patterns`: Link complementary patterns
+  - [ ] `anti_patterns`: Link patterns to avoid
+
+#### Testing & Performance
+- [ ] Semantic search accuracy > 85%
+- [ ] Cross-project pattern retrieval working
+- [ ] Decision impact network validated
+- [ ] Qdrant performance benchmarks (< 500ms query)
+- [ ] Memory usage with 500K patterns tested
+
+**Deliverables**:
+- Qdrant Docker setup working
+- Enhanced MCP server with metadata
+- Cross-project pattern system
+- Decision impact network visualization
+- Performance benchmarks
 
 ### v1.2 (April 2026)
-**Focus**: IDE integration
+**Focus**: Team decision synchronization and expertise graph
 
-- [ ] VS Code extension
-  - [ ] Inline context hints
-  - [ ] Rule suggestions
-  - [ ] Pattern warnings
-- [ ] JetBrains plugin (IntelliJ, PyCharm)
+**Impact**: ~85% context rot improvement (3% waste vs 8% in v1.1)
+
+#### Team Decision Propagation
+- [ ] Async Decision Ratification System
+  - [ ] Decision submission from individual projects
+  - [ ] Team notification and review workflow
+  - [ ] Consensus-building (simple majority or unanimous)
+  - [ ] Decision approval/rejection with feedback
+  - [ ] Automatic propagation to similar projects on approval
+- [ ] Team Decision Sync
+  - [ ] Team-wide decision registry (via Qdrant)
+  - [ ] Automatic distribution of approved decisions
+  - [ ] Context-aware adaptation to new projects
+  - [ ] Change notification and audit trail
+- [ ] Expertise Graph
+  - [ ] Map who knows which patterns/decisions
+  - [ ] Expertise scoring based on corrections and approvals
+  - [ ] Suggestion routing to domain experts
+  - [ ] Cross-team knowledge discovery
+- [ ] Decision Velocity Metrics
+  - [ ] Time to decision
+  - [ ] Decision stability (changes per decision)
+  - [ ] Team consensus speed
+  - [ ] Pattern adoption rate across projects
+  - [ ] Rework reduction metrics
+
+#### Knowledge Synchronization
+- [ ] Shared Context Propagation
+  - [ ] Team members sync context between sessions
+  - [ ] Automatic context merging for team projects
+  - [ ] Conflict resolution for competing decisions
+  - [ ] Async update notifications
+- [ ] Team Conventions Library
+  - [ ] Shared coding standards
+  - [ ] Team-approved patterns catalog
+  - [ ] Decision history with rationale
+  - [ ] Version control for team guidelines
+- [ ] Expert Routing
+  - [ ] Route pattern suggestions to most relevant expert
+  - [ ] Learn from expert corrections (higher weight)
+  - [ ] Build expertise profiles automatically
+  - [ ] Mentor/mentee recommendations
+
+#### Monitoring & Reporting
+- [ ] Team Dashboard
+  - [ ] Shared decision metrics across projects
+  - [ ] Pattern adoption rates by team member
+  - [ ] Decision velocity trends
+  - [ ] Team expertise heatmap
+  - [ ] Context health across team
+- [ ] Decision Analytics
+  - [ ] Which decisions create most value
+  - [ ] Which patterns are most reused
+  - [ ] Team consensus patterns
+  - [ ] Knowledge transfer effectiveness
+- [ ] Reporting
+  - [ ] Weekly team context health reports
+  - [ ] Decision impact summaries
+  - [ ] Expertise growth tracking
+  - [ ] Bottleneck identification
+
+#### Testing & Validation
+- [ ] Team sync accuracy > 95%
+- [ ] Decision propagation working across 5+ projects
+- [ ] Expertise graph correctly identifies experts
+- [ ] Decision velocity metrics validated
+- [ ] Team dashboard performance (< 1s load)
+
+**Deliverables**:
+- Team decision ratification system
+- Shared decision registry working
+- Expertise graph operational
+- Team dashboard with analytics
+- Decision velocity metrics reporting
+- Cross-team sync functional
 
 ### v2.0 (Q2 2026)
 **Focus**: Advanced intelligence
