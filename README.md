@@ -151,6 +151,48 @@ Quick installation without cloning:
 curl -fsSL https://raw.githubusercontent.com/TheGlitchKing/mind-glaive/main/install.sh | bash
 ```
 
+## Updates & Maintenance
+
+### Automatic Updates
+
+If you installed via the Claude Code marketplace, the plugin **automatically checks for updates at startup**:
+
+- ✅ New versions install automatically
+- 📢 You'll see a notification suggesting you restart Claude Code
+- 🔄 Just restart to apply the latest features and fixes
+
+### Manual Updates
+
+To manually update to the latest version:
+
+**Via Marketplace:**
+```
+/plugin uninstall mind-glaive@mind-glaive-marketplace
+/plugin install mind-glaive
+```
+
+**Via Direct Install:**
+```bash
+cd mind-glaive
+git pull origin main
+./install.sh --scope user --template full-stack
+```
+
+### What's New
+
+Check the [GitHub releases](https://github.com/TheGlitchKing/mind-glaive/releases) for what's included in each version:
+
+- New features and improvements
+- Bug fixes
+- New hook capabilities (e.g., PreCompact hook for context preservation during compaction)
+- Enhanced documentation
+
+### Breaking Changes
+
+We follow semantic versioning (MAJOR.MINOR.PATCH). Breaking changes only occur in major version updates and are documented in release notes.
+
+**Current Version**: 1.0.0 ✅
+
 ## Project Templates
 
 Choose a template during installation:
