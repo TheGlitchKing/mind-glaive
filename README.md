@@ -124,6 +124,12 @@ claude # Start Claude Code
 /mind-glaive/setup
 ```
 
+**Step 3: Enable the plugin**
+
+```
+/plugin enable mind-glaive
+```
+
 **That's it!** 🎉 Hooks are now active in your project.
 
 **Verify it works:**
@@ -208,6 +214,7 @@ git push
 1. /plugin install TheGlitchKing/mind-glaive
 2. git pull (to get .claude/ with hooks.json)
 3. /plugin enable mind-glaive
+4. /context/status (verify it's working)
 ```
 
 ## Updates & Maintenance
