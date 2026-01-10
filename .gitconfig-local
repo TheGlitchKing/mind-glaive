@@ -1,0 +1,7 @@
+[commit]
+    # Automatically clean commit messages
+    template = 
+
+[core]
+    # Hooks directory
+    hooksPath = .git/hooks
