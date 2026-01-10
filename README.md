@@ -110,43 +110,40 @@ claude # Start Claude Code
 
 ## Installation Methods
 
-### Method 1: Via Claude Code Marketplace (Recommended for All Projects)
+### Method 1: Via Claude Code Marketplace (Recommended - No Terminal Needed!)
 
-**Step 1: Install the plugin** (in any Claude Code session)
+**Step 1: Install the plugin** (once per person, any Claude Code session)
 
-```bash
+```
 /plugin install TheGlitchKing/mind-glaive
 ```
 
-**Step 2: Initialize hooks in each project**
+**Step 2: Setup project** (once per project, in the project's Claude Code session)
 
-```bash
-# Clone this repo or navigate to mind-glaive directory
-cd mind-glaive
-
-# Run installer in the project you want to use mind-glaive
-cd /path/to/your/project
-/path/to/mind-glaive/install.sh --scope project --template minimal
+```
+/mind-glaive/setup
 ```
 
-**Step 3: Enable and verify**
+**That's it!** 🎉 Hooks are now active in your project.
 
-```bash
-/plugin enable mind-glaive
-/welcome
-```
-
-**Why two steps?** The plugin system manages slash commands and skills globally, but hooks require project-specific configuration (`.claude/hooks.json`). The `install.sh` creates this for you.
-
-**Check context health:**
+**Verify it works:**
 
 ```
 /context/status
 ```
 
-### Method 2: Direct Install from GitHub (Full Control)
+**Optional: Choose a template** (default is minimal)
 
-Clone and install manually:
+```
+/mind-glaive/setup full-stack
+/mind-glaive/setup data-science
+```
+
+---
+
+### Method 2: Direct Install from GitHub (For Power Users)
+
+Clone and install manually for more control:
 
 ```bash
 # Clone the repository
@@ -165,17 +162,52 @@ cd /path/to/your/project
 /welcome
 ```
 
-### Method 3: One-Liner (Project Only)
+---
 
-Quick installation in current project without cloning:
+### Method 3: Migrating from Marketplace to Direct Install
+
+If you already installed via marketplace but want direct control:
 
 ```bash
-# In your project directory, run:
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/TheGlitchKing/mind-glaive/main/install.sh)" -- --scope project --template minimal
+# Keep the plugin installed
+# Just run the installer in your project
+/path/to/mind-glaive/install.sh --scope project --template minimal
 
-# Then enable
+# Verify hooks are active
 /plugin enable mind-glaive
-/welcome
+/context/status
+```
+
+---
+
+### For Teams: Installing for All Collaborators
+
+**Have each team member do this (once per person):**
+
+```
+1. /plugin install TheGlitchKing/mind-glaive
+```
+
+**Then in the shared project, have one person do this (once per project):**
+
+```
+2. /mind-glaive/setup
+```
+
+**Commit `.claude/` to git so other team members pick up the config:**
+
+```bash
+git add .claude/
+git commit -m "chore: initialize mind-glaive for project"
+git push
+```
+
+**Other team members just need to:**
+
+```
+1. /plugin install TheGlitchKing/mind-glaive
+2. git pull (to get .claude/ with hooks.json)
+3. /plugin enable mind-glaive
 ```
 
 ## Updates & Maintenance
