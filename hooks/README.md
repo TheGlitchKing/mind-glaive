@@ -10,6 +10,7 @@ Two configurations provided:
 **Minimal configuration** for Layer 1-2 integration:
 - SessionStart: Inject context at session beginning
 - SessionEnd: Capture context at session end
+- PreCompact: Capture context before context window compaction
 
 **Time overhead**: < 40 seconds per session
 **Setup**: Ready to use
@@ -18,6 +19,7 @@ Two configurations provided:
 **Full-featured configuration** for Layers 2-7:
 - SessionStart: Context injection
 - SessionEnd: Knowledge capture and archival
+- PreCompact: Capture context before compaction
 - PreToolUse: Verbose operation delegation
 - PostToolUse: Pattern learning and rule generation
 
@@ -76,6 +78,25 @@ cp hooks/advanced-hooks.json ~/.claude/hooks.json
 
 **Performance**: 20-30 seconds (depends on Ollama)
 
+### PreCompact Hook
+
+**When**: Triggered before Claude Code compacts the conversation window
+**What it does**:
+1. Captures session context before window reduction
+2. Saves decisions and learnings immediately
+3. Prevents loss of context during compaction
+4. Updates `.claude/CLAUDE.md` with latest state
+
+**Why it matters**: Ensures no knowledge is lost when conversation becomes too long and needs compression.
+
+**Triggers**:
+- Manual: When user runs `/compact` command
+- Automatic: When context window fills up
+
+**Output**: JSON status response
+
+**Performance**: 20-30 seconds (background operation)
+
 ### PreToolUse Hook (Advanced)
 
 **When**: Before running tool (test, log commands, etc.)
@@ -112,6 +133,7 @@ Available in hooks:
 
 - SessionStart: 10 seconds (must complete)
 - SessionEnd: 30 seconds (background)
+- PreCompact: 30 seconds (background, before compaction)
 - PreToolUse: 5 seconds (fast decision)
 - PostToolUse: 15 seconds (pattern analysis)
 
@@ -202,10 +224,12 @@ echo '{"status": "success", "custom_field": "value"}' | jq .
 |------|------|--------|
 | SessionStart | 5-10s | Critical |
 | SessionEnd | 20-30s | Background |
+| PreCompact | 20-30s | Background (on-demand) |
 | PreToolUse | 2-5s | Decision |
 | PostToolUse | 10-15s | Learning |
 
 **Total per session**: < 60 seconds overhead
+**PreCompact**: Only runs when context window fills up or on `/compact` command
 
 ## See Also
 
