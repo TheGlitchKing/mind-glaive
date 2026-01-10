@@ -91,22 +91,42 @@ claude # Start Claude Code
 
 ## Installation Methods
 
-### Method 1: Direct Install (Recommended)
+### Method 1: Via Claude Code Marketplace (Recommended)
+
+Within a Claude Code session, add the mind-glaive marketplace:
+
+```
+/plugin add-marketplace https://github.com/TheGlitchKing/mind-glaive.git
+```
+
+Then install the plugin:
+
+```
+/plugin install mind-glaive
+```
+
+Verify installation:
+
+```
+/context/status
+```
+
+### Method 2: Direct Install from GitHub
+
+Clone and install manually:
+
 ```bash
 git clone https://github.com/TheGlitchKing/mind-glaive.git
 cd mind-glaive
 ./install.sh --scope user --template full-stack
 ```
 
-### Method 2: One-Liner
+### Method 3: One-Liner
+
+Quick installation without cloning:
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/TheGlitchKing/mind-glaive/main/install.sh | bash
-```
-
-### Method 3: Plugin Manager (Coming Soon)
-Once mind-glaive is registered in the Claude Code marketplace:
-```bash
-/plugin install mind-glaive
 ```
 
 ## Project Templates
