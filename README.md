@@ -101,54 +101,72 @@ claude # Start Claude Code
 
 ## Installation Methods
 
-### Method 1: Via Claude Code Marketplace (Recommended)
+### Method 1: Via Claude Code Marketplace (Recommended for All Projects)
 
-Within a Claude Code session, add the mind-glaive marketplace:
+**Step 1: Install the plugin** (in any Claude Code session)
 
-```
-/plugin marketplace add TheGlitchKing/mind-glaive
-```
-
-Or using the shorthand:
-
-```
-/plugin market add TheGlitchKing/mind-glaive
+```bash
+/plugin install TheGlitchKing/mind-glaive
 ```
 
-Then install the plugin:
+**Step 2: Initialize hooks in each project**
 
-```
-/plugin install mind-glaive
+```bash
+# Clone this repo or navigate to mind-glaive directory
+cd mind-glaive
+
+# Run installer in the project you want to use mind-glaive
+cd /path/to/your/project
+/path/to/mind-glaive/install.sh --scope project --template minimal
 ```
 
-Verify installation - you should see a welcome message or run:
+**Step 3: Enable and verify**
 
-```
+```bash
+/plugin enable mind-glaive
 /welcome
 ```
 
-This shows the installation success message and quick start guide. Then check context health:
+**Why two steps?** The plugin system manages slash commands and skills globally, but hooks require project-specific configuration (`.claude/hooks.json`). The `install.sh` creates this for you.
+
+**Check context health:**
 
 ```
 /context/status
 ```
 
-### Method 2: Direct Install from GitHub
+### Method 2: Direct Install from GitHub (Full Control)
 
 Clone and install manually:
 
 ```bash
+# Clone the repository
 git clone https://github.com/TheGlitchKing/mind-glaive.git
 cd mind-glaive
+
+# Install globally (shared by all projects)
 ./install.sh --scope user --template full-stack
+
+# Or install for current project only
+cd /path/to/your/project
+/path/to/mind-glaive/install.sh --scope project --template minimal
+
+# Then enable the plugin
+/plugin enable mind-glaive
+/welcome
 ```
 
-### Method 3: One-Liner
+### Method 3: One-Liner (Project Only)
 
-Quick installation without cloning:
+Quick installation in current project without cloning:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/TheGlitchKing/mind-glaive/main/install.sh | bash
+# In your project directory, run:
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/TheGlitchKing/mind-glaive/main/install.sh)" -- --scope project --template minimal
+
+# Then enable
+/plugin enable mind-glaive
+/welcome
 ```
 
 ## Updates & Maintenance
