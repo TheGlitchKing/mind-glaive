@@ -217,6 +217,49 @@ git push
 4. /context/status (verify it's working)
 ```
 
+---
+
+## ⚠️ IMPORTANT: .gitignore Configuration
+
+Mind-glaive creates local files that should **NOT** be committed to your repository. Add this to your `.gitignore`:
+
+```gitignore
+# mind-glaive local context (keep out of version control)
+.claude/CLAUDE.md
+.claude/archives/
+.claude/context/
+```
+
+**What to commit (shared with team):**
+```gitignore
+.claude/hooks.json          # ✅ DO commit - shared hook config
+.claude/rules/              # ✅ DO commit - shared rules
+.claude/commands/           # ✅ DO commit - shared commands
+.claude/agents/             # ✅ DO commit - shared agents
+.claude/skills/             # ✅ DO commit - shared skills
+```
+
+**What NOT to commit (local only):**
+```gitignore
+.claude/CLAUDE.md           # ❌ Local context, changes per session
+.claude/archives/           # ❌ Historical data, local summaries
+.claude/context/            # ❌ Session-specific context
+.claude/scripts/            # ❌ Generated scripts (auto-created)
+```
+
+**Why?** Each team member's `CLAUDE.md` reflects their own session history and learnings. Sharing these would cause conflicts and lose individual context. The hook config and rules are meant to be shared; the context is personal.
+
+**Recommended .gitignore entry:**
+```gitignore
+# mind-glaive - keep local context out of version control
+.claude/CLAUDE.md
+.claude/archives/
+.claude/context/
+.claude/scripts/
+```
+
+---
+
 ## Updates & Maintenance
 
 ### Automatic Updates
