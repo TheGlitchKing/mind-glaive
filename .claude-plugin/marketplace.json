@@ -1,0 +1,52 @@
+{
+  "name": "mind-glaive-marketplace",
+  "owner": {
+    "name": "TheGlitchKing",
+    "email": "contact@theglitchking.dev"
+  },
+  "metadata": {
+    "description": "Official marketplace for mind-glaive - Claude Code plugin for eliminating context rot",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "mind-glaive",
+      "description": "Eliminate context rot in Claude Code with intelligent memory, auto-learning hooks, and specialized subagents",
+      "version": "1.0.0",
+      "author": "TheGlitchKing",
+      "homepage": "https://github.com/TheGlitchKing/mind-glaive",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/TheGlitchKing/mind-glaive.git"
+      },
+      "license": "MIT",
+      "keywords": [
+        "context",
+        "memory",
+        "persistence",
+        "hooks",
+        "subagents",
+        "knowledge-base",
+        "claude-code"
+      ],
+      "category": "productivity",
+      "tags": [
+        "context-management",
+        "memory",
+        "learning",
+        "automation"
+      ],
+      "source": {
+        "source": "github",
+        "repo": "TheGlitchKing/mind-glaive"
+      },
+      "strict": true,
+      "components": {
+        "commands": "7 slash commands for context management",
+        "agents": "3 specialized subagents for isolation",
+        "hooks": "SessionStart/End hooks for automatic context capture",
+        "mcpServers": "SQLite knowledge base and semantic search"
+      }
+    }
+  ]
+}
