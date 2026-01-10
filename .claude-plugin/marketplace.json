@@ -13,12 +13,11 @@
       "name": "mind-glaive",
       "description": "Eliminate context rot in Claude Code with intelligent memory, auto-learning hooks, and specialized subagents",
       "version": "1.0.0",
-      "author": "TheGlitchKing",
-      "homepage": "https://github.com/TheGlitchKing/mind-glaive",
-      "repository": {
-        "type": "git",
-        "url": "https://github.com/TheGlitchKing/mind-glaive.git"
+      "author": {
+        "name": "TheGlitchKing"
       },
+      "homepage": "https://github.com/TheGlitchKing/mind-glaive",
+      "repository": "https://github.com/TheGlitchKing/mind-glaive.git",
       "license": "MIT",
       "keywords": [
         "context",
@@ -40,13 +39,7 @@
         "source": "github",
         "repo": "TheGlitchKing/mind-glaive"
       },
-      "strict": true,
-      "components": {
-        "commands": "7 slash commands for context management",
-        "agents": "3 specialized subagents for isolation",
-        "hooks": "SessionStart/End hooks for automatic context capture",
-        "mcpServers": "SQLite knowledge base and semantic search"
-      }
+      "strict": true
     }
   ]
 }
