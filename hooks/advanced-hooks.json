@@ -1,0 +1,53 @@
+{
+  "description": "Advanced hooks configuration with PreToolUse and PostToolUse for pattern learning",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/inject-session-context.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/capture-session-knowledge.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash(npm test|pytest|docker.*logs)",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "This is a verbose test/logging command. Should we delegate to isolated test-runner subagent to keep main context clean? Respond with JSON: {\"allow\": true/false, \"reason\": \"...\"}",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/learn-from-corrections.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
