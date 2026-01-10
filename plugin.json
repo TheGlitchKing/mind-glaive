@@ -2,13 +2,12 @@
   "name": "mind-glaive",
   "version": "1.0.0",
   "description": "Eliminate context rot through intelligent memory management, auto-learning hooks, and specialized subagents",
-  "author": "TheGlitchKing",
+  "author": {
+    "name": "TheGlitchKing"
+  },
   "license": "MIT",
   "homepage": "https://github.com/TheGlitchKing/mind-glaive",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TheGlitchKing/mind-glaive.git"
-  },
+  "repository": "https://github.com/TheGlitchKing/mind-glaive.git",
   "keywords": [
     "context",
     "memory",
@@ -16,81 +15,5 @@
     "hooks",
     "subagents",
     "knowledge-base"
-  ],
-  "requires": {
-    "claude-code": ">=1.0.0"
-  },
-  "optional": {
-    "ollama": "latest"
-  },
-  "components": {
-    "hooks": {
-      "path": "hooks/default-hooks.json",
-      "description": "Auto-capture and inject session context"
-    },
-    "commands": {
-      "path": "commands/",
-      "description": "7 slash commands for context management"
-    },
-    "agents": {
-      "path": "agents/",
-      "description": "3 specialized subagents for isolation"
-    },
-    "skills": {
-      "path": "skills/",
-      "description": "Automated maintenance and learning"
-    },
-    "templates": {
-      "path": "templates/",
-      "description": "3 pre-configured project templates"
-    }
-  },
-  "installation": {
-    "method": "script",
-    "script": "install.sh",
-    "instructions": "Run: ./install.sh --scope user --template minimal"
-  },
-  "uninstallation": {
-    "script": "uninstall.sh",
-    "clean": true
-  },
-  "documentation": {
-    "readme": "README.md",
-    "architecture": "ARCHITECTURE.md",
-    "roadmap": "ROADMAP.md",
-    "implementation": "IMPLEMENTATION_GUIDE.md",
-    "layer1": "docs/LAYER_1_MEMORY.md"
-  },
-  "features": [
-    "Intelligent memory hierarchy",
-    "Context-preserving hooks",
-    "Specialized subagents",
-    "Auto-updating slash commands",
-    "MCP servers for knowledge base",
-    "Automated maintenance skills",
-    "Pattern learning intelligence",
-    "One-command installation"
-  ],
-  "metrics": {
-    "context_size_target": "50KB per session",
-    "hook_timeout_start": "10 seconds",
-    "hook_timeout_end": "30 seconds",
-    "pattern_accuracy": ">80%",
-    "test_coverage": ">70%"
-  },
-  "changelog": {
-    "1.0.0": {
-      "date": "2026-01-09",
-      "changes": [
-        "Complete 8-layer architecture implementation",
-        "Layer 1: Memory hierarchy with templates and rules",
-        "Layer 2: SessionStart/End hooks for context capture",
-        "Layer 3: Specialized subagents for isolation",
-        "Layer 4: 7 slash commands for user interaction",
-        "Layer 5: MCP servers for knowledge base",
-        "Layer 6-7: Skills and auto-learning",
-        "Layer 8: One-command installer"
-      ]
-    }
-  }
+  ]
 }
