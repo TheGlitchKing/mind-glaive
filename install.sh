@@ -83,7 +83,7 @@ echo ""
 
 # Create directory structure
 echo -e "${BLUE}Creating directories...${NC}"
-mkdir -p "$INSTALL_DIR"/{rules,archives,context,commands,agents}
+mkdir -p "$INSTALL_DIR"/{rules,archives,context,commands,agents,scripts}
 mkdir -p "$INSTALL_DIR/commands"/{context,learn,resume}
 
 # Copy template CLAUDE.md
@@ -97,13 +97,13 @@ if [ -d "$TEMPLATE_PATH/rules" ]; then
     echo -e "${GREEN}✓ Rules installed${NC}"
 fi
 
-# Copy hooks (user scope only)
-if [ "$SCOPE" = "user" ]; then
-    echo -e "${BLUE}Installing hooks...${NC}"
-    cp ./hooks/default-hooks.json "$INSTALL_DIR/hooks.json" 2>/dev/null || true
-    cp -r ./scripts/*.sh "$INSTALL_DIR/" 2>/dev/null || true
-    echo -e "${GREEN}✓ Hooks installed${NC}"
-fi
+# Copy hooks (all scopes)
+echo -e "${BLUE}Installing hooks...${NC}"
+cp ./hooks/default-hooks.json "$INSTALL_DIR/hooks.json" 2>/dev/null || true
+cp -r ./scripts/*.sh "$INSTALL_DIR/scripts/" 2>/dev/null || true
+# Make hook scripts executable
+chmod +x "$INSTALL_DIR/scripts/"*.sh 2>/dev/null || true
+echo -e "${GREEN}✓ Hooks installed${NC}"
 
 # Copy commands (user scope only)
 if [ "$SCOPE" = "user" ]; then
