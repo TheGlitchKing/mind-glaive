@@ -329,10 +329,33 @@
 - Decision impact network visualization
 - Performance benchmarks
 
-### v1.2 (April 2026)
-**Focus**: Team decision synchronization and expertise graph
+### v1.2a (April 2026) - Self-Hosted Team Server
+**Focus**: Team decision synchronization with central vector store
 
 **Impact**: ~85% context rot improvement (3% waste vs 8% in v1.1)
+
+**Architecture**: Central server + plugin clients
+
+#### Infrastructure Requirements
+- [ ] Central Qdrant Vector Store
+  - [ ] Hosted on team server (self-hosted Docker)
+  - [ ] Shared across all team members
+  - [ ] Authentication/authorization system
+  - [ ] Data persistence and backup strategy
+  - [ ] Network access for team members (VPN/firewall compatible)
+- [ ] Team Decision API Server
+  - [ ] REST API for decision submission/approval
+  - [ ] WebSocket for real-time notifications
+  - [ ] Authentication (API keys, OAuth)
+  - [ ] Rate limiting and security
+  - [ ] Audit logging for compliance
+- [ ] Web-Based Team Dashboard
+  - [ ] Decision review interface
+  - [ ] Approval workflows (UI)
+  - [ ] Team expertise visualization
+  - [ ] Decision velocity analytics
+  - [ ] Team context health monitoring
+  - [ ] Responsive design (mobile-friendly)
 
 #### Team Decision Propagation
 - [ ] Async Decision Ratification System
@@ -401,12 +424,51 @@
 - [ ] Team dashboard performance (< 1s load)
 
 **Deliverables**:
+- Central Qdrant server with team auth
+- Team decision API server (REST + WebSocket)
+- Web-based team dashboard
 - Team decision ratification system
 - Shared decision registry working
 - Expertise graph operational
-- Team dashboard with analytics
 - Decision velocity metrics reporting
 - Cross-team sync functional
+- Self-hosted Docker Compose setup guide
+
+#### Setup & Deployment
+- [ ] Docker Compose configuration for team server
+  - [ ] Qdrant container
+  - [ ] API server container
+  - [ ] Nginx reverse proxy (optional)
+  - [ ] PostgreSQL for auth/audit (optional)
+- [ ] Installation guide for team deployment
+  - [ ] System requirements
+  - [ ] Network configuration (firewall, VPN)
+  - [ ] SSL/TLS setup
+  - [ ] Team member onboarding
+  - [ ] Backup & recovery procedures
+- [ ] Mind-glaive v1.2a plugin client
+  - [ ] Connects to central team server
+  - [ ] Submits decisions for approval
+  - [ ] Syncs approved decisions locally
+  - [ ] Sends expertise feedback
+
+---
+
+### v1.2b (Q3 2026+) - Cloud Team Hub (Optional)
+**Focus**: Managed cloud version (optional, no infrastructure needed)
+
+**Architecture**: Fully managed SaaS
+
+- [ ] Cloud-hosted team decision platform
+- [ ] Zero-setup team onboarding (just invite)
+- [ ] Automatic backups and updates
+- [ ] Team management dashboard
+- [ ] Pricing/subscription model
+- [ ] Data privacy & compliance options
+
+*Alternative to v1.2a for teams wanting no infrastructure maintenance*
+
+---
 
 ### v2.0 (Q2 2026)
 **Focus**: Advanced intelligence
