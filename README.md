@@ -78,9 +78,9 @@ Context rot occurs when:
 claude plugin marketplace add TheGlitchKing/mind-glaive
 ```
 
-**For each collaborator (once):**
+**For each collaborator (once from within a claude session):**
 ```
-/plugin install TheGlitchKing/mind-glaive
+claude plugin install mind-glaive@mind-glaive-marketplace
 ```
 
 **For each project (once):**
