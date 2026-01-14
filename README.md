@@ -72,8 +72,11 @@ Context rot occurs when:
 - **Auto-Updates** - Version checking and upgrade path
 
 ## Quick Start
-
 ### Via Claude Code Marketplace (Easiest - Recommended!)
+**Add the marketplace - run this command OUTSIDE of claude code**
+```
+claude plugin marketplace add TheGlitchKing/mind-glaive
+```
 
 **For each collaborator (once):**
 ```
