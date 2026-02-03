@@ -1,0 +1,62 @@
+{
+  "name": "@theglitchking/mind-glaive",
+  "version": "1.1.0",
+  "description": "Eliminate context rot in Claude Code with intelligent memory, auto-learning hooks, and specialized subagents",
+  "type": "commonjs",
+  "bin": {
+    "mind-glaive": "./bin/mind-glaive.js"
+  },
+  "scripts": {
+    "postinstall": "node postinstall.js",
+    "prepublishOnly": "bash scripts/validate-version.sh"
+  },
+  "files": [
+    "bin/",
+    "agents/",
+    "commands/",
+    "hooks/",
+    "scripts/",
+    "skills/",
+    "templates/",
+    "mcp-servers/",
+    "examples/",
+    "docs/",
+    "install.sh",
+    "uninstall.sh",
+    "postinstall.js",
+    "plugin.json",
+    ".claude-plugin/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "claude-code",
+    "context-management",
+    "memory",
+    "persistence",
+    "hooks",
+    "subagents",
+    "knowledge-base",
+    "plugin"
+  ],
+  "author": {
+    "name": "TheGlitchKing",
+    "email": "contact@theglitchking.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheGlitchKing/mind-glaive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheGlitchKing/mind-glaive/issues"
+  },
+  "homepage": "https://github.com/TheGlitchKing/mind-glaive#readme"
+}

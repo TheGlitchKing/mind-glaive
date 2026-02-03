@@ -90,6 +90,28 @@ That's it! 🎉 Hooks are now active. Run:
 /context/status
 ```
 
+### Via NPM (Recommended for CLI users!)
+
+```bash
+# Install globally
+npm install -g @theglitchking/mind-glaive
+
+# Run the installer
+mind-glaive install --scope user --template full-stack
+
+# Check status
+mind-glaive status
+
+# Or use npx (no install needed)
+npx @theglitchking/mind-glaive install --scope user --template full-stack
+```
+
+**Available commands:**
+- `mind-glaive install` - Install the plugin
+- `mind-glaive uninstall` - Uninstall the plugin
+- `mind-glaive status` - Check installation status
+- `mind-glaive help` - Show help
+
 ### Or Direct Install
 
 ```bash
