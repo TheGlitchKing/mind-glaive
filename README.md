@@ -93,45 +93,29 @@ That's it! 🎉 Hooks are now active. Run:
 /context/status
 ```
 
-### Via NPM (Recommended for CLI users!)
+### Via NPM (project-level)
+
+> **v1 → v2 breaking change**: the `mind-glaive install --scope user` flow was removed. Installation is now handled automatically by either the Claude Code plugin marketplace or npm's postinstall. See [CHANGELOG.md](./CHANGELOG.md) for migration details.
 
 ```bash
-# Install globally
-npm install -g @theglitchking/mind-glaive
-
-# Run the installer
-mind-glaive install --scope user --template full-stack
-
-# Check status
-mind-glaive status
-
-# Or use npx (no install needed)
-npx @theglitchking/mind-glaive install --scope user --template full-stack
+npm install --save-dev @theglitchking/mind-glaive
 ```
 
-**Available commands:**
-- `mind-glaive install` - Install the plugin
-- `mind-glaive uninstall` - Uninstall the plugin
-- `mind-glaive status` - Check installation status
-- `mind-glaive help` - Show help
+Postinstall writes `.claude/mind-glaive.json` (update policy: `nudge`) and registers a SessionStart update-check hook in `.claude/settings.json` (skipped if the marketplace plugin is already enabled in `~/.claude/settings.json`).
 
-### Or Direct Install
+### Update management
+
+Every install ships with an update policy. Default is `nudge` — one-liner notification at session start when a newer version is available, no automatic changes.
 
 ```bash
-# Clone the repository
-git clone https://github.com/TheGlitchKing/mind-glaive.git
-cd mind-glaive
-
-# Install globally (all your projects)
-./install.sh --scope user --template full-stack
-
-# Or install for current project only
-./install.sh --scope project --template minimal
-
-# Verify installation
-claude # Start Claude Code
-/welcome
+mind-glaive status          # installed / latest / policy / hook state
+mind-glaive policy auto     # auto-update on session start
+mind-glaive policy nudge    # one-liner nudge only (default)
+mind-glaive policy off      # silent
+mind-glaive update          # update now
 ```
+
+Slash-command parity: `/mind-glaive:status`, `/mind-glaive:policy <mode>`, `/mind-glaive:update`, `/mind-glaive:relink`.
 
 ## Installation Methods
 

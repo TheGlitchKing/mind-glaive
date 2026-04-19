@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.0.1] — 2026-04-19
+
+### Fixed
+- Skills restructured into per-skill subdirectories
+  (`skills/<name>/SKILL.md`) so they are actually discoverable by
+  Claude Code's plugin loader and by the runtime's skill-symlink
+  postinstall. In 2.0.0 they were flat `.md` files at `skills/*.md`
+  which neither path could pick up.
+
+  ```
+  skills/context-maintenance.md        →  skills/context-maintenance/SKILL.md
+  skills/pattern-learning.md           →  skills/pattern-learning/SKILL.md
+  skills/SKILL_MIND_GLAIVE_SETUP.md    →  skills/mind-glaive-setup/SKILL.md
+  ```
+- `scripts/link-skills.js` flipped `skillsDir: null` → `"skills"` so
+  postinstall now symlinks the three skills into
+  `<project>/.claude/skills/`.
+
+### README
+- v1 install instructions (`mind-glaive install --scope user --template
+  full-stack`) rewritten to reflect the v2 flow (marketplace or
+  project-level npm install). Added an Update management section.
+
+---
+
 ## [2.0.0] — 2026-04-19
 
 ### Breaking changes

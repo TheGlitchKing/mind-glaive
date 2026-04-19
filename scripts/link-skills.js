@@ -12,7 +12,7 @@ try {
     packageName: "@theglitchking/mind-glaive",
     pluginName: "mind-glaive",
     configFile: "mind-glaive.json",
-    skillsDir: null,
+    skillsDir: "skills",
     packageRoot,
     hookCommand:
       "node ./node_modules/@theglitchking/mind-glaive/hooks/session-start.js",

@@ -1,7 +1,7 @@
 {
   "name": "mind-glaive",
   "displayName": "Mind Glaive",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Eliminate context rot in Claude Code with intelligent memory hierarchy, auto-learning hooks, and specialized subagents. 8-layer architecture with SessionStart/End hooks and MCP knowledge base.",
   "author": {
     "name": "TheGlitchKing",
@@ -11,17 +11,41 @@
   "license": "MIT",
   "type": "claude-plugin",
   "hooks": [
-    { "event": "SessionStart", "description": "Load memory context" },
-    { "event": "SessionEnd", "description": "Persist session learnings" },
-    { "event": "PreToolUse", "description": "Context optimization" },
-    { "event": "PostToolUse", "description": "Pattern learning" },
-    { "event": "PreCompact", "description": "Memory compression" }
+    {
+      "event": "SessionStart",
+      "description": "Load memory context"
+    },
+    {
+      "event": "SessionEnd",
+      "description": "Persist session learnings"
+    },
+    {
+      "event": "PreToolUse",
+      "description": "Context optimization"
+    },
+    {
+      "event": "PostToolUse",
+      "description": "Pattern learning"
+    },
+    {
+      "event": "PreCompact",
+      "description": "Memory compression"
+    }
   ],
   "requirements": {
     "claudeCode": ">=1.0.0",
     "node": ">=16.0.0",
     "bash": true
   },
-  "tags": ["context-management", "memory", "learning", "automation", "hooks", "subagents"],
-  "categories": ["productivity"]
+  "tags": [
+    "context-management",
+    "memory",
+    "learning",
+    "automation",
+    "hooks",
+    "subagents"
+  ],
+  "categories": [
+    "productivity"
+  ]
 }
