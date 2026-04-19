@@ -25,3 +25,6 @@ Thumbs.db
 tmp/
 temp/
 *.tmp
+*.tgz
+.claude/.mind-glaive-update-cache.json
+package-lock.json

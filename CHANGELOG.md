@@ -1,5 +1,50 @@
 # Changelog
 
+## [2.0.0] — 2026-04-19
+
+### Breaking changes
+
+- **Package is now ESM** (`"type": "module"`). Node >= 20.
+- **Hand-rolled `install|uninstall` subcommands removed.** They now
+  print a migration pointer and exit 0 so existing automation doesn't
+  silently break. Use the Claude Code plugin marketplace or npm
+  install instead.
+- Root-level `plugin.json` removed — manifest is now only at
+  `.claude-plugin/plugin.json`.
+- Marketplace source switched from `github` to `npm` (`@theglitchking/mind-glaive`).
+
+### Migration
+
+```bash
+# Install via the marketplace
+/plugin marketplace add TheGlitchKing/mind-glaive
+/plugin install mind-glaive@mind-glaive-marketplace
+
+# Or at the project level
+npm install --save-dev @theglitchking/mind-glaive
+```
+
+### Added
+
+- Adopts `@theglitchking/claude-plugin-runtime@^0.1.0`.
+- **Postinstall** writes default `.claude/mind-glaive.json` (updatePolicy:
+  nudge) and registers a SessionStart update-check hook in
+  `.claude/settings.json` (with plugin-vs-npm dedup).
+- **Slash + CLI subcommands:**
+  - `/mind-glaive:update` / `mind-glaive update`
+  - `/mind-glaive:policy [auto|nudge|off]` / `mind-glaive policy`
+  - `/mind-glaive:status` / `mind-glaive status`
+  - `/mind-glaive:relink` / `mind-glaive relink`
+
+### Env-var opt-outs
+
+| Variable | Effect |
+|---|---|
+| `MIND_GLAIVE_UPDATE_POLICY` | One-shot policy override |
+| `MIND_GLAIVE_SKIP_HOOK_REGISTER=1` | Skip writing the SessionStart hook |
+
+---
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),

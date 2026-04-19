@@ -6,13 +6,13 @@
   },
   "metadata": {
     "description": "Official marketplace for mind-glaive - Claude Code plugin for eliminating context rot",
-    "version": "1.0.0"
+    "version": "2.0.0"
   },
   "plugins": [
     {
       "name": "mind-glaive",
       "description": "Eliminate context rot in Claude Code with intelligent memory, auto-learning hooks, and specialized subagents",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "author": {
         "name": "TheGlitchKing"
       },
@@ -36,8 +36,8 @@
         "automation"
       ],
       "source": {
-        "source": "github",
-        "repo": "TheGlitchKing/mind-glaive"
+        "source": "npm",
+        "package": "@theglitchking/mind-glaive"
       },
       "strict": true
     }

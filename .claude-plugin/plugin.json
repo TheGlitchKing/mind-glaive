@@ -1,7 +1,7 @@
 {
   "name": "mind-glaive",
   "displayName": "Mind Glaive",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Eliminate context rot in Claude Code with intelligent memory hierarchy, auto-learning hooks, and specialized subagents. 8-layer architecture with SessionStart/End hooks and MCP knowledge base.",
   "author": {
     "name": "TheGlitchKing",
@@ -10,9 +10,6 @@
   "repository": "https://github.com/TheGlitchKing/mind-glaive",
   "license": "MIT",
   "type": "claude-plugin",
-  "installation": {
-    "postInstall": "./install.sh --scope user --template full-stack"
-  },
   "hooks": [
     { "event": "SessionStart", "description": "Load memory context" },
     { "event": "SessionEnd", "description": "Persist session learnings" },
